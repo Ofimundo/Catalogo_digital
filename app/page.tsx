@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { FileCheck, Wallet, FileText,Grid3x3 , ArrowRight, Sparkles, Timer, CheckCircle2, Zap, Link2, Bot, Code, TrendingUp, AlertCircle, Target, BarChart3, Users, ChevronDown, PlayCircle, Cpu, Building2, MonitorSmartphone, Landmark, ScrollText, Coins, FileSpreadsheet, Calculator, Headphones, Clock, Mail, Phone, MessageCircle, Star, Award, Calendar, MessageSquare, Heart } from "lucide-react"
+import { FileCheck, Wallet, FileText, Grid3x3, ArrowRight, Sparkles, Timer, CheckCircle2, Zap, Link2, Bot, Code, TrendingUp, AlertCircle, Target, BarChart3, Users, ChevronDown, PlayCircle, Cpu, Building2, MonitorSmartphone, Landmark, ScrollText, Coins, FileSpreadsheet, Calculator, Headphones, Clock, Mail, Phone, MessageCircle, Star, Award, Calendar, MessageSquare, Heart, Scan, FileSearch, Plus, Handshake, LineChart, Rocket } from "lucide-react"
 import './globals.css'
 
 // Navbar simplificada
@@ -22,22 +22,32 @@ function SimpleNavbar() {
     }
   }
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#c41e7a] to-[#5a45a5] flex items-center justify-center">
+          <button 
+            onClick={scrollToTop}
+            className="flex items-center gap-2 group cursor-pointer transition-all duration-300 hover:scale-105 focus:outline-none"
+            aria-label="Volver al inicio"
+          >
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#c41e7a] to-[#5a45a5] flex items-center justify-center transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[#c41e7a]/30">
               <Sparkles className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-3xl md:text-4xl bg-gradient-to-r from-[#c41e7a] to-[#5a45a5] bg-clip-text text-transparent">Ofilab</span>
-          </div>
+            <span className="font-bold text-3xl md:text-4xl bg-gradient-to-r from-[#c41e7a] to-[#5a45a5] bg-clip-text text-transparent transition-all duration-300 group-hover:from-[#e83e8c] group-hover:to-[#7a3a9a]">
+              Ofilab
+            </span>
+          </button>
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('servicios')} className="text-foreground/70 hover:text-[#c41e7a] transition-colors cursor-pointer">Servicios</button>
             <button onClick={() => scrollToSection('resultados')} className="text-foreground/70 hover:text-[#c41e7a] transition-colors cursor-pointer">Resultados</button>
             <button onClick={() => scrollToSection('proceso')} className="text-foreground/70 hover:text-[#c41e7a] transition-colors cursor-pointer">Metodología</button>
             <button onClick={() => scrollToSection('soluciones')} className="text-foreground/70 hover:text-[#c41e7a] transition-colors cursor-pointer">Soluciones</button>
-            <button onClick={() => scrollToSection('mesa-ayuda')} className="text-foreground/70 hover:text-[#c41e7a] transition-colors cursor-pointer">Mesa Ayuda</button>
+            <button onClick={() => scrollToSection('soporte-tecnico')} className="text-foreground/70 hover:text-[#c41e7a] transition-colors cursor-pointer">Soporte Técnico</button>
             <button onClick={() => scrollToSection('customer-success')} className="text-foreground/70 hover:text-[#c41e7a] transition-colors cursor-pointer">Customer Success</button>
             <button onClick={() => scrollToSection('contacto')} className="text-foreground/70 hover:text-[#c41e7a] transition-colors cursor-pointer">Contacto</button>
           </div>
@@ -47,7 +57,7 @@ function SimpleNavbar() {
   )
 }
 
-// SOLUCIONES: Los 6 elementos solicitados en hexágonos más pequeños
+// SOLUCIONES: 5 elementos
 const solutions = [
   {
     id: "aceptacion-rechazo-facturas",
@@ -126,49 +136,32 @@ const solutions = [
     color: "#c41e7a"
   },
   {
-    id: "dte",
-    title: "DTE",
-    titleShort: "DTE",
-    headline: "Documentos Tributarios Electrónicos",
-    subtitle: "Cumplimiento tributario automatizado",
-    description: "Gestiona tus DTE de manera eficiente y sin errores.",
-    icon: FileSpreadsheet,
-    stats: "100%",
-    statsLabel: "Cumplimiento",
-    features: [
-      "Emisión automática de DTE",
-      "Recepción y validación de documentos",
-      "Seguimiento de estados tributarios",
-      "Integración con SII y otros organismos"
-    ],
-    gradient: "from-[#9b2d8a] to-[#5a45a5]",
-    color: "#9b2d8a"
-  },
-  {
-    id: "contabilizacion",
-    title: "Contabilización",
-    titleShort: "Contabilización",
-    headline: "Automatización contable integral",
-    subtitle: "Registros contables automáticos",
-    description: "Automatiza todo tu ciclo contable con precisión.",
-    icon: Calculator,
-    stats: "99.9%",
+    id: "automatizacion-documental-ocr",
+    title: "Automatización Documental OCR",
+    titleShort: "OCR Documental",
+    headline: "Extracción inteligente de datos",
+    subtitle: "Digitalización y reconocimiento óptico",
+    description: "Convierte documentos físicos y digitales en datos estructurados automáticamente.",
+    icon: FileSearch,
+    stats: "95%",
     statsLabel: "Precisión",
     features: [
-      "Registro contable automatizado",
-      "Cierre contable mensual simplificado",
-      "Libros contables automáticos",
-      "Informes financieros ejecutivos"
+      "Reconocimiento óptico de caracteres (OCR)",
+      "Extracción automática de datos relevantes",
+      "Clasificación inteligente de documentos",
+      "Integración con tus sistemas existentes",
+      "Soporte para múltiples formatos (PDF, imágenes, etc.)",
+      "Reducción de ingreso manual de datos"
     ],
     gradient: "from-[#5a45a5] to-[#c41e7a]",
     color: "#5a45a5"
   }
 ]
 
-// SERVICIOS - RPA ELIMINADO y DESARROLLO A MEDIDA AJUSTADO
+// SERVICIOS
 const servicios = [
-  { icon: Zap, title: "Automatización", description: "Flujos automáticos, cero tareas manuales repetitivas.", color: "#c41e7a" },
-  { icon: Link2, title: "Integraciones", description: "Conectamos ERP, CRM y sistemas internos sin fricción.", color: "#9b2d8a" },
+  { icon: Zap, title: "Automatización de procesos", description: "Flujos automáticos, cero tareas manuales repetitivas.", color: "#c41e7a" },
+  { icon: Link2, title: "Integración de sistemas", description: "Conectamos ERP, CRM y sistemas internos sin fricción.", color: "#9b2d8a" },
   { icon: Code, title: "Soluciones a Medida", description: "Plataformas personalizadas que se adaptan 100% a tu operación.", color: "#7a3a9a" }
 ]
 
@@ -186,10 +179,10 @@ const procesoPasos = [
   { step: "4", title: "Optimización", description: "Medimos y mejoramos continuamente.", icon: TrendingUp }
 ]
 
-// Componente Mesa de Ayuda
-function MesaAyuda() {
+// Componente Soporte Técnico
+function SoporteTecnico() {
   return (
-    <section id="mesa-ayuda" className="py-24 px-4 scroll-mt-20">
+    <section id="soporte-tecnico" className="py-24 px-4 scroll-mt-20">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#c41e7a]/10 border border-[#c41e7a]/30 text-sm mb-8">
@@ -197,9 +190,8 @@ function MesaAyuda() {
             <span className="text-[#c41e7a] font-medium">Soporte Técnico</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mesa de{" "}
             <span className="bg-gradient-to-r from-[#c41e7a] to-[#5a45a5] bg-clip-text text-transparent">
-              Ayuda
+              Soporte Técnico
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -207,14 +199,16 @@ function MesaAyuda() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-[#c41e7a]/40 transition-all hover:shadow-xl hover:-translate-y-1">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#c41e7a] to-[#9b2d8a] flex items-center justify-center mb-4 group-hover:scale-110 transition">
               <Clock className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-bold mb-2">Horario de Atención</h3>
-            <p className="text-muted-foreground">Lunes a Viernes</p>
+            <p className="text-muted-foreground">Lunes a Jueves</p>
             <p className="text-foreground font-semibold text-lg mt-1">9:00 - 18:00 hrs</p>
+            <p className="text-muted-foreground mt-2">Viernes</p>
+            <p className="text-foreground font-semibold text-lg">9:00 - 17:00 hrs</p>
           </div>
 
           <div className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-[#9b2d8a]/40 transition-all hover:shadow-xl hover:-translate-y-1">
@@ -223,8 +217,8 @@ function MesaAyuda() {
             </div>
             <h3 className="text-xl font-bold mb-2">Correo Electrónico</h3>
             <p className="text-muted-foreground">Escribenos a:</p>
-            <a href="mailto:soporte@ofimundo.cl" className="text-[#c41e7a] font-semibold hover:underline">
-              soporte@ofimundo.cl
+            <a href="mailto:micuenta@ofimundo.cl" className="text-[#c41e7a] font-semibold hover:underline">
+              micuenta@ofimundo.cl
             </a>
           </div>
 
@@ -234,18 +228,17 @@ function MesaAyuda() {
             </div>
             <h3 className="text-xl font-bold mb-2">Teléfono</h3>
             <p className="text-muted-foreground">Llámanos al:</p>
-            <a href="tel:+56229574700" className="text-[#9b2d8a] font-semibold hover:underline">
-              +56 2 2957 4700 (opción 2)
+            <a href="tel:+56228104700" className="text-[#9b2d8a] font-semibold hover:underline">
+              +56 2 2810 4700
             </a>
           </div>
         </div>
-
       </div>
     </section>
   )
 }
 
-// Componente Customer Success
+// Componente Customer Success - ACTUALIZADO con solo 3 conceptos
 function CustomerSuccess() {
   return (
     <section id="customer-success" className="py-24 px-4 scroll-mt-20 bg-gradient-to-b from-transparent to-[#c41e7a]/5">
@@ -262,43 +255,41 @@ function CustomerSuccess() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Clientes Premium y Plus cuentan con un Customer Success Manager dedicado para maximizar el valor de nuestras soluciones.
+            Todos nuestros clientes cuentan con un Customer Success Manager dedicado para maximizar el valor de nuestras soluciones.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#c41e7a]/40 transition-all hover:scale-105">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#c41e7a]/20 to-[#9b2d8a]/20 flex items-center justify-center mx-auto mb-4">
-              <Star className="w-8 h-8 text-[#c41e7a]" />
+        {/* Grid de 3 conceptos */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+          {/* Atención Personalizada */}
+          <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#c41e7a]/40 transition-all hover:scale-105 group">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#c41e7a]/20 to-[#9b2d8a]/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+              <Star className="w-10 h-10 text-[#c41e7a]" />
             </div>
-            <h3 className="text-lg font-bold mb-2">Atención Personalizada</h3>
+            <h3 className="text-xl font-bold mb-3">Atención Personalizada</h3>
             <p className="text-sm text-muted-foreground">Un ejecutivo dedicado para tu empresa</p>
           </div>
 
-          <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#9b2d8a]/40 transition-all hover:scale-105">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#9b2d8a]/20 to-[#7a3a9a]/20 flex items-center justify-center mx-auto mb-4">
-              <TrendingUp className="w-8 h-8 text-[#9b2d8a]" />
+          {/* Acompañamiento Estratégico */}
+          <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#9b2d8a]/40 transition-all hover:scale-105 group">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#9b2d8a]/20 to-[#7a3a9a]/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+              <Handshake className="w-10 h-10 text-[#9b2d8a]" />
             </div>
-            <h3 className="text-lg font-bold mb-2">Optimización Continua</h3>
-            <p className="text-sm text-muted-foreground">Mejora constante de procesos</p>
+            <h3 className="text-xl font-bold mb-3">Acompañamiento Estratégico</h3>
+            <p className="text-sm text-muted-foreground">Visión experta para potenciar tus resultados</p>
           </div>
 
-          <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#7a3a9a]/40 transition-all hover:scale-105">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#7a3a9a]/20 to-[#5a45a5]/20 flex items-center justify-center mx-auto mb-4">
-              <Award className="w-8 h-8 text-[#7a3a9a]" />
+          {/* Evolución Continua */}
+          <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#7a3a9a]/40 transition-all hover:scale-105 group">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7a3a9a]/20 to-[#5a45a5]/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+              <Rocket className="w-10 h-10 text-[#7a3a9a]" />
             </div>
-            <h3 className="text-lg font-bold mb-2">Capacitación Incluida</h3>
-            <p className="text-sm text-muted-foreground">Entrenamiento para tu equipo</p>
-          </div>
-
-          <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#5a45a5]/40 transition-all hover:scale-105">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#5a45a5]/20 to-[#c41e7a]/20 flex items-center justify-center mx-auto mb-4">
-              <Target className="w-8 h-8 text-[#5a45a5]" />
-            </div>
-            <h3 className="text-lg font-bold mb-2">Métricas de Éxito</h3>
-            <p className="text-sm text-muted-foreground">Reportes personalizados de rendimiento</p>
+            <h3 className="text-xl font-bold mb-3">Evolución Continua</h3>
+            <p className="text-sm text-muted-foreground">Tu solución crece junto a tu negocio</p>
           </div>
         </div>
+
+        {/* Beneficios y Resultados - sin cambios */}
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-6 rounded-2xl bg-card/50 border border-border">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
@@ -333,11 +324,11 @@ function CustomerSuccess() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <CheckCircle2 className="w-4 h-4 text-[#c41e7a] mt-0.5" />
-                <span>Reducción mínima del 40% en tiempos operativos</span>
+                <span>Reducción significativa en tiempos operativos</span>
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <CheckCircle2 className="w-4 h-4 text-[#c41e7a] mt-0.5" />
-                <span>Soporte prioritario con respuesta en menos de 2 horas</span>
+                <span>Soporte prioritario con respuesta ágil</span>
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <CheckCircle2 className="w-4 h-4 text-[#c41e7a] mt-0.5" />
@@ -358,12 +349,13 @@ function CustomerSuccess() {
 export default function HomePage() {
   const [mounted, setMounted] = useState(false)
   const [activeSolution, setActiveSolution] = useState(0)
+  const [expandedSolution, setExpandedSolution] = useState<number | null>(null)
 
   useEffect(() => {
     setMounted(true)
     const interval = setInterval(() => {
       setActiveSolution((prev) => (prev + 1) % solutions.length)
-    }, 5000)
+    }, 4000)
     return () => clearInterval(interval)
   }, [])
 
@@ -372,6 +364,10 @@ export default function HomePage() {
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' })
     }
+  }
+
+  const toggleSolution = (idx: number) => {
+    setExpandedSolution(expandedSolution === idx ? null : idx)
   }
 
   if (!mounted) return null
@@ -402,7 +398,7 @@ export default function HomePage() {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10">
-              Automatizamos tus procesos para que tu equipo produzca más, con menos errores y en menos tiempo.{" "}
+              Automatizamos tus procesos para que tu equipo produzca más, con menos errores y en menos tiempo.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -431,7 +427,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICIOS SECTION - con los cambios solicitados */}
+      {/* SERVICIOS SECTION */}
       <section id="servicios" className="py-24 px-4 scroll-mt-20">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
@@ -528,50 +524,56 @@ export default function HomePage() {
               </span>
             </h2>
             <p className="text-lg text-muted-foreground">Tecnología de vanguardia para transformar tu negocio</p>
+            <p className="text-sm text-muted-foreground mt-2">✨ Los hexágonos cambian automáticamente - Haz clic en cualquier solución para ver más detalles ✨</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto mb-12">
             {solutions.map((solution, idx) => {
               const Icon = solution.icon
               const isActive = activeSolution === idx
+              const isExpanded = expandedSolution === idx
               
               return (
                 <div
                   key={idx}
-                  className="relative group cursor-pointer"
-                  onClick={() => setActiveSolution(idx)}
-                  onMouseEnter={() => setActiveSolution(idx)}
+                  className="relative group cursor-pointer transition-all duration-300"
+                  onClick={() => toggleSolution(idx)}
                 >
-                  <div className={`relative transition-all duration-500 ${isActive ? 'transform scale-105' : 'hover:scale-102'}`}>
+                  <div className={`relative transition-all duration-300 ${isActive || isExpanded ? 'transform scale-110' : 'hover:scale-105'}`}>
                     <svg viewBox="0 0 160 150" className="w-full h-auto drop-shadow-md">
                       <defs>
                         <linearGradient id={`hexGradient-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor={solution.color} stopOpacity={isActive ? "0.35" : "0.15"} />
-                          <stop offset="100%" stopColor={solution.color} stopOpacity={isActive ? "0.2" : "0.08"} />
+                          <stop offset="0%" stopColor={solution.color} stopOpacity={isActive || isExpanded ? "0.45" : "0.2"} />
+                          <stop offset="100%" stopColor={solution.color} stopOpacity={isActive || isExpanded ? "0.3" : "0.1"} />
                         </linearGradient>
                         <linearGradient id={`hexBorder-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor={solution.color} stopOpacity={isActive ? "0.9" : "0.4"} />
-                          <stop offset="100%" stopColor={solution.color} stopOpacity={isActive ? "0.6" : "0.2"} />
+                          <stop offset="0%" stopColor={solution.color} stopOpacity={isActive || isExpanded ? "1" : "0.5"} />
+                          <stop offset="100%" stopColor={solution.color} stopOpacity={isActive || isExpanded ? "0.8" : "0.3"} />
                         </linearGradient>
                       </defs>
                       <polygon
                         points="80,10 150,50 150,100 80,140 10,100 10,50"
                         fill={`url(#hexGradient-${idx})`}
                         stroke={`url(#hexBorder-${idx})`}
-                        strokeWidth={isActive ? "2" : "1.2"}
-                        className="transition-all duration-500"
+                        strokeWidth={isActive || isExpanded ? "2.5" : "1.5"}
+                        className="transition-all duration-300"
                         style={{
-                          filter: isActive ? `drop-shadow(0 0 15px ${solution.color}80)` : "drop-shadow(0 2px 4px rgba(0,0,0,0.1))"
+                          filter: isActive || isExpanded ? `drop-shadow(0 0 20px ${solution.color}99)` : "drop-shadow(0 2px 4px rgba(0,0,0,0.1))"
                         }}
                       />
                     </svg>
                     
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-3">
-                      <Icon className={`w-6 h-6 mb-1 transition-all duration-500 ${isActive ? 'scale-110' : ''}`} style={{ color: isActive ? solution.color : "#666" }} />
-                      <h3 className="text-[10px] font-bold text-foreground mb-0.5 px-1 leading-tight">{solution.titleShort}</h3>
-                      <div className={`inline-flex items-baseline gap-0.5 px-1 py-0.5 rounded-full mt-0.5 text-[8px] ${isActive ? 'bg-opacity-20' : 'bg-muted/50'}`} style={{ backgroundColor: isActive ? `${solution.color}30` : undefined }}>
-                        <span style={{ color: isActive ? solution.color : "#999" }} className="font-bold">{solution.stats}</span>
-                        <span className="text-muted-foreground">{solution.statsLabel}</span>
+                      <Icon className={`w-7 h-7 mb-2 transition-all duration-300 ${isActive || isExpanded ? 'scale-110' : ''}`} style={{ color: isActive || isExpanded ? solution.color : "#888" }} />
+                      <h3 className={`text-[11px] font-bold text-center px-1 leading-tight transition-all duration-300 ${isActive || isExpanded ? 'text-foreground' : 'text-foreground/80'}`}>
+                        {solution.titleShort}
+                      </h3>
+                      <div className={`inline-flex items-baseline gap-0.5 px-1.5 py-0.5 rounded-full mt-1.5 text-[9px] ${isActive || isExpanded ? 'bg-opacity-25' : 'bg-muted/50'}`} style={{ backgroundColor: isActive || isExpanded ? `${solution.color}40` : undefined }}>
+                        <span style={{ color: isActive || isExpanded ? solution.color : "#999" }} className="font-bold">{solution.stats}</span>
+                        <span className="text-muted-foreground text-[8px]">{solution.statsLabel}</span>
+                      </div>
+                      <div className={`absolute bottom-2 right-2 w-5 h-5 rounded-full bg-gradient-to-br ${solution.gradient} flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 ${isActive || isExpanded ? 'scale-110' : ''}`}>
+                        <Plus className="w-3 h-3 text-white" />
                       </div>
                     </div>
                   </div>
@@ -580,40 +582,55 @@ export default function HomePage() {
             })}
           </div>
 
-          <div className="max-w-4xl mx-auto mt-8">
-            <div className="bg-gradient-to-br from-card/60 to-card/40 backdrop-blur-sm rounded-2xl border p-8 shadow-xl transition-all duration-500" style={{ borderColor: `${solutions[activeSolution].color}60` }}>
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${solutions[activeSolution].gradient} flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                  {(() => {
-                    const Icon = solutions[activeSolution].icon
-                    return <Icon className="w-8 h-8 text-white" />
-                  })()}
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-2">{solutions[activeSolution].title}</h3>
-                  <p className="text-base font-medium mb-3" style={{ color: solutions[activeSolution].color }}>{solutions[activeSolution].subtitle}</p>
-                  <p className="text-foreground/80 text-sm mb-4">{solutions[activeSolution].headline}</p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-5">
-                    {solutions[activeSolution].features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-sm">
-                        <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: solutions[activeSolution].color }} />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </div>
-                    ))}
+          {expandedSolution !== null && (
+            <div className="max-w-4xl mx-auto mt-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm rounded-2xl border-2 p-8 shadow-xl transition-all duration-500" style={{ borderColor: `${solutions[expandedSolution].color}80` }}>
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${solutions[expandedSolution].gradient} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                    {(() => {
+                      const Icon = solutions[expandedSolution].icon
+                      return <Icon className="w-10 h-10 text-white" />
+                    })()}
                   </div>
-                  <Link href={`/soluciones/${solutions[activeSolution].id}`} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all group hover:shadow-lg" style={{ background: `linear-gradient(135deg, ${solutions[activeSolution].color}, ${solutions[activeSolution].color}CC)`, color: 'white' }}>
-                    Conocer más
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-                  </Link>
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-2">{solutions[expandedSolution].title}</h3>
+                      <button 
+                        onClick={() => setExpandedSolution(null)}
+                        className="text-muted-foreground hover:text-[#c41e7a] transition-colors p-1 text-xl"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                    <p className="text-base font-semibold mb-3" style={{ color: solutions[expandedSolution].color }}>{solutions[expandedSolution].subtitle}</p>
+                    <p className="text-lg text-foreground/80 mb-5">{solutions[expandedSolution].headline}</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                      {solutions[expandedSolution].features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: solutions[expandedSolution].color }} />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex gap-3 flex-wrap">
+                      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style={{ background: `${solutions[expandedSolution].color}20`, color: solutions[expandedSolution].color }}>
+                        {solutions[expandedSolution].stats} {solutions[expandedSolution].statsLabel}
+                      </span>
+                      <Link href={`/soluciones/${solutions[expandedSolution].id}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all group hover:shadow-lg hover:scale-105" style={{ background: `linear-gradient(135deg, ${solutions[expandedSolution].color}, ${solutions[expandedSolution].color}CC)`, color: 'white' }}>
+                        Conocer más
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
-      {/* MESA DE AYUDA */}
-      <MesaAyuda />
+      {/* SOPORTE TÉCNICO */}
+      <SoporteTecnico />
 
       {/* CUSTOMER SUCCESS */}
       <CustomerSuccess />
@@ -627,10 +644,9 @@ export default function HomePage() {
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
                 Si hoy dependes de Excel, correos y tareas manuales...
               </h2>
-              <p className="text-xl text-white/90 mb-2 font-semibold">¡estás perdiendo dinero!</p>
-              <p className="text-white/80 mb-8">Te mostramos en 30 minutos cómo automatizar tu operación.</p>
-              <Link href="/contacto" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#c41e7a] font-bold rounded-full hover:shadow-xl transition hover:scale-105">
-                Quiero mi diagnóstico gratis
+              <p className="text-xl text-white/90 mb-8 font-semibold">¡estás perdiendo dinero!</p>
+              <Link href="/contacto" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#c41e7a] font-bold rounded-full hover:shadow-xl transition hover:scale-105">
+                Contáctanos
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

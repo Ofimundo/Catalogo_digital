@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
-import { ArrowLeft, Mail, Phone, MapPin, User, ArrowRight, Sparkles } from "lucide-react"
+import { ArrowLeft, Mail, Phone, MapPin, User, ArrowRight, Sparkles, Building2 } from "lucide-react"
 
 export default function ContactoPage() {
   return (
@@ -49,11 +49,10 @@ export default function ContactoPage() {
               <div className="bg-gradient-to-r from-[#c41e7a] to-[#5a45a5] p-10">
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center">
-                    <User className="w-12 h-12 text-white" />
+                    <Building2 className="w-12 h-12 text-white" />
                   </div>
                   <div className="text-center md:text-left">
-                    <h2 className="text-3xl font-bold text-white">Rhody Santibañez</h2>
-                    <p className="text-white/80 text-lg">Ejecutivo de Ventas</p>
+                    <h2 className="text-3xl font-bold text-white">Nuestros canales de comunicación</h2>
                   </div>
                 </div>
               </div>
@@ -61,20 +60,20 @@ export default function ContactoPage() {
               <div className="p-10">
                 <div className="grid md:grid-cols-2 gap-6">
                   <a 
-                    href="mailto:rsantibanez@ofimundo.cl"
+                    href="mailto:automatizacion.ofilab@ofimundo.cl"
                     className="flex items-center gap-4 p-6 rounded-2xl bg-secondary/30 hover:bg-secondary/50 transition-all group border border-border hover:border-[#c41e7a]/40 hover:-translate-y-1"
                   >
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#c41e7a] to-[#9b2d8a] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Mail className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground mb-1">Email</p>
-                      <p className="font-semibold text-foreground text-lg">rsantibanez@ofimundo.cl</p>
+                      <p className="text-sm text-muted-foreground mb-1">Correo creado para estos efectos</p>
+                      <p className="font-semibold text-foreground text-lg">automatizacion.ofilab@ofimundo.cl</p>
                     </div>
                   </a>
                   
                   <a 
-                    href="tel:+56229574700"
+                    href="tel:+56228104700"
                     className="flex items-center gap-4 p-6 rounded-2xl bg-secondary/30 hover:bg-secondary/50 transition-all group border border-border hover:border-[#9b2d8a]/40 hover:-translate-y-1"
                   >
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#9b2d8a] to-[#7a3a9a] flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -82,7 +81,7 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Teléfono</p>
-                      <p className="font-semibold text-foreground text-lg">+56 2 2957 4700</p>
+                      <p className="font-semibold text-foreground text-lg">+56 2 2810 4700</p>
                     </div>
                   </a>
                 </div>
@@ -119,10 +118,10 @@ export default function ContactoPage() {
                   Agenda una demostración gratuita y descubre cómo nuestras soluciones pueden transformar tu empresa.
                 </p>
                 <a
-                  href="mailto:rsantibanez@ofimundo.cl?subject=Solicitud de demostración - Prueba gratuita 3 meses"
+                  href="mailto:automatizacion.ofilab@ofimundo.cl?subject=Solicitud de demostración - Prueba gratuita 3 meses"
                   className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-[#c41e7a] font-bold rounded-full hover:shadow-xl transition hover:scale-105"
                 >
-                  Agendar demostración
+                  Agendar reunión 
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

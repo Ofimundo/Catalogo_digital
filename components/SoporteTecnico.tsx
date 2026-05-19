@@ -1,10 +1,10 @@
 "use client"
 
-import { Headphones, Clock, Mail, Phone, MessageCircle, CheckCircle2, Zap, Users } from "lucide-react"
+import { Headphones, Clock, Mail, Phone, MessageCircle } from "lucide-react"
 
-export function MesaAyuda() {
+export function SoporteTecnico() {
   return (
-    <section id="mesa-ayuda" className="py-24 px-4 scroll-mt-20">
+    <section id="soporte-tecnico" className="py-24 px-4 scroll-mt-20">
       <div className="container mx-auto max-w-6xl">
         {/* Encabezado */}
         <div className="text-center mb-16">
@@ -13,9 +13,8 @@ export function MesaAyuda() {
             <span className="text-[#c41e7a] font-medium">Soporte Técnico</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mesa de{" "}
             <span className="bg-gradient-to-r from-[#c41e7a] to-[#5a45a5] bg-clip-text text-transparent">
-              Ayuda
+              Soporte Técnico
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -25,37 +24,39 @@ export function MesaAyuda() {
 
         {/* Grid de servicios de soporte */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {/* Horario */}
+          {/* Horario - ACTUALIZADO */}
           <div className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-[#c41e7a]/40 transition-all hover:shadow-xl hover:-translate-y-1">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#c41e7a] to-[#9b2d8a] flex items-center justify-center mb-4 group-hover:scale-110 transition">
               <Clock className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-bold mb-2">Horario de Atención</h3>
-            <p className="text-muted-foreground">Lunes a Viernes</p>
-            <p className="text-foreground font-semibold text-lg mt-1">9:00 - 18:00 hrs</p>
+            <p className="text-muted-foreground">Lunes a Jueves</p>
+            <p className="text-foreground font-semibold text-lg">9:00 - 18:00 hrs</p>
+            <p className="text-muted-foreground mt-3">Viernes</p>
+            <p className="text-foreground font-semibold text-lg">9:00 - 17:00 hrs</p>
           </div>
 
-          {/* Email */}
+          {/* Email - ACTUALIZADO */}
           <div className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-[#9b2d8a]/40 transition-all hover:shadow-xl hover:-translate-y-1">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#9b2d8a] to-[#7a3a9a] flex items-center justify-center mb-4 group-hover:scale-110 transition">
               <Mail className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-bold mb-2">Correo Electrónico</h3>
             <p className="text-muted-foreground">Escribenos a:</p>
-            <a href="mailto:soporte@ofimundo.cl" className="text-[#c41e7a] font-semibold hover:underline">
-              soporte@ofimundo.cl
+            <a href="mailto:micuenta@ofimundo.cl" className="text-[#c41e7a] font-semibold hover:underline">
+              micuenta@ofimundo.cl
             </a>
           </div>
 
-          {/* Teléfono */}
+          {/* Teléfono - ACTUALIZADO */}
           <div className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-[#7a3a9a]/40 transition-all hover:shadow-xl hover:-translate-y-1">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#7a3a9a] to-[#5a45a5] flex items-center justify-center mb-4 group-hover:scale-110 transition">
               <Phone className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-bold mb-2">Teléfono</h3>
             <p className="text-muted-foreground">Llámanos al:</p>
-            <a href="tel:+56229574700" className="text-[#9b2d8a] font-semibold hover:underline">
-              +56 2 2957 4700 (opción 2)
+            <a href="tel:+56228104700" className="text-[#9b2d8a] font-semibold hover:underline">
+              +56 2 2810 4700
             </a>
           </div>
         </div>

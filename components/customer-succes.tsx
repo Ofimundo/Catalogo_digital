@@ -19,7 +19,7 @@ export function CustomerSuccess() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Clientes Premium y Plus cuentan con un Customer Success Manager dedicado para maximizar el valor de nuestras soluciones.
+            Todos nuestros clientes cuentan con un Customer Success Manager dedicado para maximizar el valor de nuestras soluciones.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export function CustomerSuccess() {
                 <Heart className="w-8 h-8" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">¿Eres cliente Premium o Plus?</h3>
+                <h3 className="text-xl font-bold">¿Necesitas atención personalizada?</h3>
                 <p className="text-white/80">Tu Customer Success Manager está listo para atenderte</p>
               </div>
             </div>
@@ -79,11 +79,11 @@ export function CustomerSuccess() {
                 success@ofimundo.cl
               </a>
               <a 
-                href="tel:+56229574700"
+                href="tel:+56228104700"
                 className="px-5 py-2.5 rounded-full bg-white/20 text-white font-semibold hover:bg-white/30 transition-all hover:scale-105 flex items-center gap-2"
               >
                 <Phone className="w-4 h-4" />
-                Línea directa
+                +56 2 2810 4700
               </a>
             </div>
           </div>
