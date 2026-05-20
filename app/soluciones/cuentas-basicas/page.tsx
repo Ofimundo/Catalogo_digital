@@ -27,7 +27,7 @@ export default function CuentasBasicasPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-[#c41e7a] transition-colors absolute top-32 left-4 md:left-8 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Volver a Soluciones
+          Volver
         </Link>
 
         <div className="text-center max-w-2xl mx-auto">
