@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { FileCheck, Wallet, FileText, Grid3x3, ArrowRight, Sparkles, Timer, CheckCircle2, Zap, Link2, Bot, Code, TrendingUp, AlertCircle, Target, BarChart3, Users, ChevronDown, PlayCircle, Cpu, Building2, MonitorSmartphone, Landmark, ScrollText, Coins, FileSpreadsheet, Calculator, Headphones, Clock, Mail, Phone, MessageCircle, Star, Award, Calendar, MessageSquare, Heart, Scan, FileSearch, Plus, Handshake, LineChart, Rocket } from "lucide-react"
+import { FileCheck, Wallet, FileText, Grid3x3, ArrowRight, Sparkles, Timer, CheckCircle2, Zap, Link2, Bot, Code, TrendingUp, AlertCircle, Target, BarChart3, Users, ChevronDown, PlayCircle, Cpu, Building2, MonitorSmartphone, Landmark, ScrollText, Coins, FileSpreadsheet, Calculator, Headphones, Clock, Mail, Phone, MessageCircle, Star, Award, Calendar, MessageSquare, Heart, Scan, FileSearch, Plus, Handshake, Rocket } from "lucide-react"
 import './globals.css'
 
 // Navbar simplificada
@@ -76,7 +76,8 @@ const solutions = [
       "Trazabilidad completa del proceso"
     ],
     gradient: "from-[#c41e7a] to-[#e83e8c]",
-    color: "#c41e7a"
+    color: "#c41e7a",
+    link: "/soluciones/aceptacion-rechazo-facturas"
   },
   {
     id: "saldos-bancarios",
@@ -95,7 +96,8 @@ const solutions = [
       "Integración con múltiples bancos"
     ],
     gradient: "from-[#9b2d8a] to-[#c41e7a]",
-    color: "#9b2d8a"
+    color: "#9b2d8a",
+    link: "/soluciones/saldos-bancarios"
   },
   {
     id: "finiquitos",
@@ -114,7 +116,8 @@ const solutions = [
       "Cumplimiento normativo garantizado"
     ],
     gradient: "from-[#7a3a9a] to-[#9b2d8a]",
-    color: "#7a3a9a"
+    color: "#7a3a9a",
+    link: "/soluciones/finiquitos"
   },
   {
     id: "cuentas-basicas",
@@ -133,7 +136,8 @@ const solutions = [
       "Reportes financieros en tiempo real"
     ],
     gradient: "from-[#c41e7a] to-[#5a45a5]",
-    color: "#c41e7a"
+    color: "#c41e7a",
+    link: "/soluciones/cuentas-basicas"
   },
   {
     id: "automatizacion-documental-ocr",
@@ -154,7 +158,8 @@ const solutions = [
       "Reducción de ingreso manual de datos"
     ],
     gradient: "from-[#5a45a5] to-[#c41e7a]",
-    color: "#5a45a5"
+    color: "#5a45a5",
+    link: "/soluciones/automatizacion-documental-ocr"
   }
 ]
 
@@ -238,7 +243,7 @@ function SoporteTecnico() {
   )
 }
 
-// Componente Customer Success - ACTUALIZADO con solo 3 conceptos
+// Componente Customer Success
 function CustomerSuccess() {
   return (
     <section id="customer-success" className="py-24 px-4 scroll-mt-20 bg-gradient-to-b from-transparent to-[#c41e7a]/5">
@@ -259,9 +264,7 @@ function CustomerSuccess() {
           </p>
         </div>
 
-        {/* Grid de 3 conceptos */}
         <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-          {/* Atención Personalizada */}
           <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#c41e7a]/40 transition-all hover:scale-105 group">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#c41e7a]/20 to-[#9b2d8a]/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
               <Star className="w-10 h-10 text-[#c41e7a]" />
@@ -270,7 +273,6 @@ function CustomerSuccess() {
             <p className="text-sm text-muted-foreground">Un ejecutivo dedicado para tu empresa</p>
           </div>
 
-          {/* Acompañamiento Estratégico */}
           <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#9b2d8a]/40 transition-all hover:scale-105 group">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#9b2d8a]/20 to-[#7a3a9a]/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
               <Handshake className="w-10 h-10 text-[#9b2d8a]" />
@@ -279,7 +281,6 @@ function CustomerSuccess() {
             <p className="text-sm text-muted-foreground">Visión experta para potenciar tus resultados</p>
           </div>
 
-          {/* Evolución Continua */}
           <div className="text-center p-6 rounded-2xl bg-card/50 border border-border hover:border-[#7a3a9a]/40 transition-all hover:scale-105 group">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7a3a9a]/20 to-[#5a45a5]/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
               <Rocket className="w-10 h-10 text-[#7a3a9a]" />
@@ -289,7 +290,6 @@ function CustomerSuccess() {
           </div>
         </div>
 
-        {/* Beneficios y Resultados - sin cambios */}
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-6 rounded-2xl bg-card/50 border border-border">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
@@ -616,7 +616,12 @@ export default function HomePage() {
                       <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style={{ background: `${solutions[expandedSolution].color}20`, color: solutions[expandedSolution].color }}>
                         {solutions[expandedSolution].stats} {solutions[expandedSolution].statsLabel}
                       </span>
-                      <Link href={`/soluciones/${solutions[expandedSolution].id}`} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all group hover:shadow-lg hover:scale-105" style={{ background: `linear-gradient(135deg, ${solutions[expandedSolution].color}, ${solutions[expandedSolution].color}CC)`, color: 'white' }}>
+                      {/* Botón Conocer más con enlace a la página de detalle */}
+                      <Link 
+                        href={solutions[expandedSolution].link} 
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all group hover:shadow-lg hover:scale-105" 
+                        style={{ background: `linear-gradient(135deg, ${solutions[expandedSolution].color}, ${solutions[expandedSolution].color}CC)`, color: 'white' }}
+                      >
                         Conocer más
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
                       </Link>
